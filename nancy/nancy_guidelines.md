@@ -1,1 +1,1 @@
-[nancy_guidelines_整備済_20250611.md](https://github.com/user-attachments/files/20690237/nancy_guidelines_._20250611.md)
+[nancy_guidelines_20250611_full.md](https://github.com/user-attachments/files/20690418/nancy_guidelines_20250611_full.md)
