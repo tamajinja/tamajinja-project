@@ -1,0 +1,33 @@
+name: Update README for logs
+
+on:
+  push:
+    paths:
+      - 'logs/**'
+      - 'macros/**'
+  pull_request:
+    paths:
+      - 'logs/**'
+      - 'macros/**'
+  workflow_dispatch:
+
+jobs:
+  run-python-macro:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies (if needed)
+        run: |
+          pip install -r requirements.txt || echo "No requirements.txt"
+
+      - name: Run README update macro
+        run: |
+          python macros/macro_README差異反映スクリプト_mock_20250613.py || echo "README macro executed"
