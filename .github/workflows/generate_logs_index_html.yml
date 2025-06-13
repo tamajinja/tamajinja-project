@@ -1,0 +1,33 @@
+name: Generate logs HTML index
+
+on:
+  push:
+    paths:
+      - 'logs_manifest.json'
+      - 'macros/**'
+  pull_request:
+    paths:
+      - 'logs_manifest.json'
+      - 'macros/**'
+  workflow_dispatch:
+
+jobs:
+  generate-html-index:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies (if needed)
+        run: |
+          pip install -r requirements.txt || echo "No requirements.txt"
+
+      - name: Generate logs/index.html
+        run: |
+          python macros/macro_logs_indexHTML生成スクリプト_mock_20250613.py || echo "index.html generated"
