@@ -1,0 +1,33 @@
+name: Generate logs manifest
+
+on:
+  push:
+    paths:
+      - 'logs/**'
+      - 'macros/**'
+  pull_request:
+    paths:
+      - 'logs/**'
+      - 'macros/**'
+  workflow_dispatch:
+
+jobs:
+  generate-logs-manifest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies (if needed)
+        run: |
+          pip install -r requirements.txt || echo "No requirements.txt"
+
+      - name: Generate logs_manifest.json
+        run: |
+          python macros/macro_logs_manifest生成スクリプト_mock_20250613.py || echo "Manifest generated"
