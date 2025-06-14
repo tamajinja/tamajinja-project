@@ -2,7 +2,7 @@ import os
 from shutil import copyfile
 
 # パス設定
-project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+project_root = os.getcwd()
 readme_src = os.path.join(project_root, "rules", "README_統合版_with_snippet_script_20250614.md")
 readme_dst = os.path.join(project_root, "README.md")
 readme_backup = os.path.join(project_root, "README.old.md")
