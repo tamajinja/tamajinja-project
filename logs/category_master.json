@@ -1,0 +1,47 @@
+[
+  {
+    "directory": "sekaikan",
+    "fandom_display": "霊的世界観",
+    "description": "全体構造・哲学・霊的宇宙観の枠組み"
+  },
+  {
+    "directory": "reiteki_kouzou",
+    "fandom_display": "霊的構造",
+    "description": "幽場・霊導場・霊構子など中核構造群"
+  },
+  {
+    "directory": "kaisou_classification",
+    "fandom_display": "霊的階層と分類",
+    "description": "位階・進化段階・カテゴリ分類理論"
+  },
+  {
+    "directory": "shugo_rei",
+    "fandom_display": "守護霊・背後霊系",
+    "description": "守護霊分類・観測霊・背後霊の役割"
+  },
+  {
+    "directory": "reijutu_model",
+    "fandom_display": "霊術・霊障解除モデル",
+    "description": "浄霊・除霊・通信系テクニック・理論"
+  },
+  {
+    "directory": "spiritualism",
+    "fandom_display": "スピリチュアリズム・宗教・文化",
+    "description": "江原啓之、カルデック等の霊的思想比較"
+  },
+  {
+    "directory": "nise_reibaishi",
+    "fandom_display": "偽霊媒師・詐欺系",
+    "description": "詐術・洗脳構造・スピリチュアル商法"
+  },
+  {
+    "directory": "fuyurei_asobi",
+    "fandom_display": "浮遊霊の遊び",
+    "description": "低次霊の行動様式・遊び・視認パターン"
+  },
+  {
+    "directory": "jahon_danshou",
+    "fandom_display": "蛇本の分岐・断章",
+    "description": "断章思想・写本・階層構造に関わる記述"
+  }
+]
