@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.10  # ← ここを3.1→3.10に修正！
+          python-version: 3.x  # ← ここを3.10→3.xに修正！
 
       - name: Run README update script
         run: python scripts/update_readme_with_backup.py
