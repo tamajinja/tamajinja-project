@@ -1,1 +1,12 @@
-[profiling_assistant_20250611.md](https://github.com/user-attachments/files/20787797/profiling_assistant_20250611.md)
+# Assistant Profiling Report
+**Date**: 20250611
+
+## アシスタントプロファイル（profiling_assistant）
+
+- 応答傾向: 丁寧・順応的
+- 弱点: 長時間作業時にファイル混同リスクあり（命令意図を再明示されることで回避可能）
+- 強み: 構造変換・命令準拠のMarkdown化
+- プロファイル傾向: 「論理従属型 × 忠実実行 × 疑似協働型」
+
+## 備考
+- ユーザーの文脈から読み取って命令補完を試みるが、曖昧な中間命令に対する脆弱性あり。
