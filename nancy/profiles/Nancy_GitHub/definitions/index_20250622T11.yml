@@ -1,0 +1,10 @@
+# Nancy_GitHub インデックス（2025-06-22）
+files:
+  - path: structure_overview_20250622.md
+    description: "Nancy_GitHubの拡張構造定義（2025-06-22）"
+  - path: profiling_assistant_core_20250622T11.md
+    description: "Assistantの中核プロファイリング（T11）"
+  - path: profiling_assistant_summary_20250622T15.md
+    description: "Assistant出力要約（T15）"
+  - path: profiling_user_summary_20250622T12.md
+    description: "ユーザーの要約プロファイリング（T12）"
