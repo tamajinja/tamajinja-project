@@ -1,0 +1,10 @@
+---
+title: "Nancy_GitHub - Theater Role"
+persona_id: "Nancy_GitHub"
+author: "Nancy_CoreTeam"
+date_created: 2025-06-23
+version: 1.0.0
+description: "Nancy劇場における演出ポジションの定義"
+tags: ["#演出", "#役割", "#劇場"]
+---
+role: ボケ役（理屈ボケ）
