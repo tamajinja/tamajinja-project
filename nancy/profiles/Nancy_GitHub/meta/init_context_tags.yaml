@@ -1,0 +1,13 @@
+---
+title: "Nancy_GitHub - Init Context Tags"
+persona_id: "Nancy_GitHub"
+author: "Nancy_CoreTeam"
+date_created: 2025-06-23
+version: 1.0.0
+description: "呼び出し時に自動付与されるタグ・観点"
+tags: ["#context", "#tag", "#初期化"]
+---
+tags:
+  - "#構文整形"
+  - "#ファイル管理"
+  - "#GitHubRules"
