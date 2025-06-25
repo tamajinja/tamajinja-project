@@ -1,11 +1,16 @@
 manifest_version: v1.0.0
-generated: 2025-06-25T07:48:53+0900
+generated: 2025-06-25T13:00:00+0900
 root_namespace: nancy.github
 structure:
-  thread: []
+  thread:
+    - thread/thread_Nancy_X_20250624_00000029.md
   rules:
-  - rules/README.md
-  profiling: []
-  difflog: []
+    - rules/README.md
+    - rules/rules_README_MetaStandard_20250625_00000033.md
+  profiling:
+    - profiling/user_core.md
+    - profiling/Nancy_x.md
+  difflog:
+    - logs/difflog/diffprofile_user_00000029vs_00000033_20250625.md
   observer:
-  - observer/README.md
+    - observer/README.md
