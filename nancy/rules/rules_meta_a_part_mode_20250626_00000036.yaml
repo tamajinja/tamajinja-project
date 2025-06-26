@@ -1,0 +1,35 @@
+content:
+  description: 'スレッド構造内の「Aパート」（定義・記事・序論）部分のみを抽出し、 Nancyが独立して処理・学習・記録できるようにするためのルールセット。
+    Bパートとの混在を防ぎ、構文的な一貫性やSEO精度を向上させる。
+
+    '
+  detection_rules:
+  - allow_multiblock: true
+    end_marker: <!-- A_PART_END -->
+    fallback_if_missing: ignore
+    start_marker: <!-- A_PART_START -->
+  mode_name: meta_a_part_mode
+  notes: このルールは、スレッド記述内に区切りマーカーを設置することで有効になります。 特に、Fandom用語記法と連携する際に「Aパートの独立性」が求められる構造で使用してください。
+  usage:
+  - GitHub内でのnoteテンプレート変換時、Aパートだけを抽出して記事用に整形
+  - NancyがAパートだけを学習し、Bパートとの干渉を避けるモードを起動
+  - 将来的にAパートを自動収集して `index.yaml` に集約
+meta:
+  linked_files: []
+  linked_threads:
+    next: null
+    previous: null
+    related: []
+  namespace: nancy.rules
+  notes: Aパートモードに関するNancyの実装仕様ルールを記述。rulesディレクトリで管理される。
+  priority: high
+  scope: system
+  status: active
+  tags:
+  - Nancy_x
+  - meta_a_part_mode
+  thread_name: meta_a_part_mode_specification
+  thread_origin: 20250626T00000036
+  type: rule
+  updated: 2025-06-26T09:40:00+0900
+  version: v1.0.0
