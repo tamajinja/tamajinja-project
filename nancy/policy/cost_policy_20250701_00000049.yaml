@@ -1,0 +1,50 @@
+# ===============================
+# Nancy External Cost Policy File
+# ===============================
+
+meta:
+  file_name: cost_policy.yaml
+  type: policy
+  version: v1.0.0
+  updated: 2025-07-01T00:00:00+09:00
+  policy_name: Nancy_External_Cost_Limits
+  namespace: nancy/policy/
+  status: active
+  description: >
+    Nancyの外部通信やリソースアクセス（GitHub, VPS, OpenAI API等）における
+    コスト・回数・リソース使用制限を制御するためのポリシーファイルです。
+    エラー発生時の待機時間、警告しきい値、モード切替も含まれます。
+  linked_personas:
+    - Nancy_Cost_Navigate_Damper
+    - Nancy_VPS_Navigate_Damper
+    - Nancy_GitHub_Navigate_Damper
+    - Nancy_StructureReader
+    - DogBot_*
+  author: Nancy_Cost_Navigate_Damper
+  note: >
+    GitHub通知、構造記録、またはログ出力にて制限超過を管理します。
+    Slack等は使わずGitHub/VPSで完結するNancy系設計と連動します。
+
+limits:
+  github_api:
+    max_calls_per_day: 5000
+    max_calls_per_hour: 500
+    fallback_wait_seconds: 60
+
+  vps_disk_usage:
+    max_usage_mb: 1000
+    warning_threshold_percent: 80
+
+  openai_api:
+    max_calls_per_day: 2000
+    max_tokens_per_minute: 60000
+    fallback_wait_seconds: 30
+
+  structure_reader:
+    max_md_files_per_batch: 5
+    max_total_tokens: 120000
+    fallback_mode: partial_scan
+
+  dogbot_actions:
+    max_parallel_watchers: 3
+    watchdog_sleep_seconds: 15
