@@ -1,0 +1,32 @@
+
+version: v1.0.0
+updated: 2025-07-03T08:45:00+09:00
+directory: nancy/dogs/
+description: >
+  Nancy構造における監視・抑制・通知系ユニット群（dog_bot）の定義と管理用manifest。
+maintainer: Nancy_BotHub
+bots:
+  - name: logwatch_dog
+    file: logwatch_dog_config.md
+    role: log監視
+    status: active
+  - name: meta_check_dog
+    file: meta_check_dog_config.md
+    role: meta監査
+    status: active
+  - name: slack_notify_dog
+    file: Dog_bot_Slack
+    role: Slack通知
+    status: active
+  - name: hook_control_dog
+    file: hook_control_dog_config.md
+    role: hook制御
+    status: planned
+  - name: auth_check_dog
+    file: auth_check_dog_config.md
+    role: 認証
+    status: planned
+  - name: sentiment_guard_dog
+    file: sentiment_guard_dog_config.md
+    role: 感情警戒
+    status: planned
