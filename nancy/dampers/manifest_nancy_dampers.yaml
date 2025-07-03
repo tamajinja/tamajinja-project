@@ -1,0 +1,16 @@
+version: v1.0.0
+updated: 2025-07-03T10:40:00+09:00
+directory: nancy/dampers/
+description: >
+  Nancy構造における出力抑制系モジュール（damper）の定義と管理用manifest。
+maintainer: Nancy_BotHub
+dampers:
+  - name: Nancy_Output_Damper
+    role: 出力量制御
+    status: active
+  - name: Nancy_Response_Damper
+    role: 応答時間調整
+    status: planned
+  - name: Nancy_Conflict_Damper
+    role: 矛盾発生時出力停止
+    status: planned
