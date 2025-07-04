@@ -1,0 +1,52 @@
+bots:
+- file: logwatch_dog_config.md
+  name: logwatch_dog
+  role: log監視
+  status: active
+- file: meta_check_dog_config.md
+  name: meta_check_dog
+  role: meta監査
+  status: active
+- file: Dog_bot_Slack
+  name: slack_notify_dog
+  role: Slack通知
+  status: active
+- file: hook_control_dog_config.md
+  name: hook_control_dog
+  role: hook制御
+  status: planned
+- file: auth_check_dog_config.md
+  name: auth_check_dog
+  role: 認証
+  status: planned
+- file: sentiment_guard_dog_config.md
+  name: sentiment_guard_dog
+  role: 感情警戒
+  status: planned
+- file: vps_inspector_dog_config.md
+  name: vps_inspector_dog
+  role: VPS監査
+  status: active
+dependencies:
+- Nancy_VPS_Inspector
+- logwatch_dog
+- meta_check_dog
+- slack_notify_dog
+- hook_control_dog
+- auth_check_dog
+- sentiment_guard_dog
+- vps_inspector_dog
+description: Nancy構造における監視・抑制・通知系ユニット群（dog_bot）の定義と管理用manifest。
+directory: nancy/dogs/
+maintainer: Nancy_BotHub
+output_format:
+- markdown
+- json
+- slack
+scope: vps
+tags:
+- monitoring
+- notification
+- enforcement
+updated: '2025-07-04T12:00:00+09:00'
+version: v1.0.0
