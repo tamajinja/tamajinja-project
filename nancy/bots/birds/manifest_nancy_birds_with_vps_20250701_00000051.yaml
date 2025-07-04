@@ -1,0 +1,59 @@
+bots:
+- name: BirdBot_Audit
+  role: 横断監査結果実況
+  status: active
+- name: BirdBot_Evo
+  role: 進化提案実況
+  status: active
+- name: BirdBot_Keyword
+  role: キーワード出現傾向可視化
+  status: active
+- name: BirdBot_Layer
+  role: 構造階層可視化
+  status: active
+- name: BirdBot_Memory
+  role: 語彙監査可視化
+  status: active
+- name: BirdBot_Refactor
+  role: 修正提案実況
+  status: active
+- name: BirdBot_Structure
+  role: 構造分析実況
+  status: active
+- name: BirdBot_Style
+  role: 文体変化実況
+  status: active
+- name: BirdBot_Evolutionary_Inspector
+  role: Evolutionary_Inspector対応
+  status: planned
+- name: BirdBot_Memory_Inspector
+  role: Memory_Inspector対応
+  status: planned
+- name: BirdBot_SelfRefactor_Inspector
+  role: SelfRefactor_Inspector対応
+  status: planned
+- name: BirdBot_Trimmer
+  role: Trimmer対応
+  status: planned
+- name: BirdBot_VPS_Inspector
+  role: VPS監査レポーター
+  status: active
+dependencies:
+- Nancy_GitHub_Inspector
+- BirdBot_GitHub_Inspector
+- BirdBot_VPS_Inspector
+description: 'Nancy構造における実況・透明性強化系ユニット群（bird_bot）の定義と管理用manifest。
+
+  '
+directory: nancy/bots/bird/
+maintainer: Nancy_BotHub
+output_format:
+- markdown
+- json
+- slack
+scope: github
+tags:
+- monitoring
+- notification
+updated: 2025-07-03 10:00:00+09:00
+version: v1.0.0
