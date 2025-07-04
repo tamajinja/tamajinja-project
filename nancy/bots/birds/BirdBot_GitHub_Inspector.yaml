@@ -1,0 +1,9 @@
+type: birdbot
+version: v1.0.0
+updated: 2025-07-04
+bot_name: BirdBot_GitHub_Inspector
+linked_nancy: Nancy_GitHub_Inspector
+role: リポジトリ監査レポーター
+output_format: markdown, json, slack
+description: |
+  Nancy_GitHub_Inspectorの検出結果を軽量にまとめ、Slackやダッシュボードに通知する実況Bot。

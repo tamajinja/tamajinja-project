@@ -1,0 +1,9 @@
+type: birdbot
+version: v1.0.0
+updated: 2025-07-04
+bot_name: BirdBot_VPS_Inspector
+linked_nancy: Nancy_VPS_Inspector
+role: VPS監査レポーター
+output_format: markdown, json, slack
+description: |
+  Nancy_VPS_Inspectorの監査結果を実況形式で通知するBot。異常を即時報告する。
