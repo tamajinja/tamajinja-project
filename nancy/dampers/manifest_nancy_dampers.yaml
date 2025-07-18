@@ -1,16 +1,57 @@
+# Nancy Damper Threshold Manifest
 version: v1.0.0
-updated: 2025-07-03T10:40:00+09:00
-directory: nancy/dampers/
+updated: 2025-07-18T00:00:00+09:00
+thread_id: thread_Nancy_X_20250718_00000063
+namespace: nancy.dampers
+status: active
 description: >
-  Nancy構造における出力抑制系モジュール（damper）の定義と管理用manifest。
-maintainer: Nancy_BotHub
-dampers:
-  - name: Nancy_Output_Damper
-    role: 出力量制御
-    status: active
-  - name: Nancy_Response_Damper
-    role: 応答時間調整
-    status: planned
-  - name: Nancy_Conflict_Damper
-    role: 矛盾発生時出力停止
-    status: planned
+  Nancyネットワーク全体の安全性を高めるためのDamper閾値設定ファイル。
+  VPS負荷、GitHub活動、出力量の3カテゴリをカバーし、警告・減速・強制停止の3段階制御。
+
+thresholds:
+  vps:
+    cpu_usage_percent:
+      warn: 70
+      slow_mode: 85
+      stop: 95
+    memory_usage_percent:
+      warn: 75
+      slow_mode: 85
+      stop: 95
+    disk_usage_percent:
+      warn: 80
+      slow_mode: 90
+      stop: 95
+    job_execution_time_seconds:
+      warn: 60
+      slow_mode: 120
+      stop: 180
+
+  github:
+    commits_per_hour:
+      warn: 10
+      slow_mode: 20
+      stop: 30
+    pull_requests_per_day:
+      warn: 5
+      slow_mode: 10
+      stop: 15
+    diff_file_size_mb:
+      warn: 50
+      slow_mode: 100
+      stop: 150
+
+  output:
+    chatgpt_output_per_hour:
+      warn: 50
+      slow_mode: 100
+      stop: 150
+    output_volume_mb_per_hour:
+      warn: 20
+      slow_mode: 50
+      stop: 100
+
+actions:
+  warn: birdbot_notify
+  slow_mode: reduce_priority_and_interval
+  stop: force_kill_and_admin_confirm
