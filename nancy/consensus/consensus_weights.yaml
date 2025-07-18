@@ -1,0 +1,14 @@
+# Nancy Consensus Weights
+version: v1.0.0
+updated: 2025-07-18T00:00:00+09:00
+namespace: nancy.consensus
+status: active
+weights:
+  Nancy_Architect: 5
+  Nancy_VPS_Engineer: 4
+  Nancy_GitHub: 3
+  BirdBot_GitHub_Inspector: 2
+  BirdBot_VPS_Inspector: 2
+  DogBot_Guard: 2
+timeout_seconds: 5
+fallback_decider: Nancy_Architect
