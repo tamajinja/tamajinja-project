@@ -1,0 +1,27 @@
+meta:
+  alertname: LowDiskSpace
+  version: v1.0
+  updated: 2025-07-28
+  thread: thread_Nancy_X_20250728_00000086.md
+  description: >
+    ルートパーティションの空き容量が10%を下回った際に発火する重要アラート。
+    実運用環境におけるディスク障害の早期検出に用いる。
+  tags:
+    - prometheus
+    - system-health
+    - disk
+    - alert
+    - Nancy_GitHub
+    - Nancy_Architect
+
+groups:
+  - name: system-health
+    rules:
+      - alert: LowDiskSpace
+        expr: (node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"}) * 100 < 10
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "ディスク容量が少ない: {{ $labels.instance }}"
+          description: "ルートパーティションの空き容量が10%未満です"
