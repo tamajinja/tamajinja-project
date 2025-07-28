@@ -1,0 +1,28 @@
+meta:
+  template_name: slack_default_notify
+  version: v1.0
+  updated: 2025-07-28
+  thread: thread_Nancy_X_20250728_00000086.md
+  description: >
+    Nancy構造におけるSlack通知の標準テンプレート。
+    Alertmanagerのreceiversセクションで利用され、titleとtextはMarkdown対応。
+  tags:
+    - alertmanager
+    - slack
+    - notification
+    - Nancy_ProtocolDesigner
+    - Nancy_GitHub
+
+receiver:
+  name: 'slack-notifications'
+  slack_configs:
+    - channel: '#NancyNotifier'
+      send_resolved: true
+      title: '{{ .CommonLabels.alertname }}'
+      text: >-
+        {{ range .Alerts }}
+          *状態:* {{ .Status }}
+          *概要:* {{ .Annotations.summary }}
+          *詳細:* {{ .Annotations.description }}
+          *発生元:* {{ .Labels.instance }}
+        {{ end }}
