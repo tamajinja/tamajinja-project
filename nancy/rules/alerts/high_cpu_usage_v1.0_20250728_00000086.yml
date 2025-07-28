@@ -1,0 +1,28 @@
+meta:
+  alertname: HighCPUUsage
+  version: v1.0
+  updated: 2025-07-28
+  thread: thread_Nancy_X_20250728_00000086.md
+  description: >
+    CPU使用率が80%を超過した際に通知を出す基本的な高負荷アラート。
+    Prometheus + Node Exporter を使用している構成を前提とする。
+    本ファイルは GitHub管理用にmeta化され、Nancy構造に準拠する。
+  tags:
+    - prometheus
+    - system-health
+    - cpu
+    - alert
+    - Nancy_GitHub
+    - Nancy_Architect
+
+groups:
+  - name: system-health
+    rules:
+      - alert: HighCPUUsage
+        expr: 100 - (avg by(instance)(rate(node_cpu_seconds_total{mode="idle"}[2m])) * 100) > 80
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "高負荷: {{ $labels.instance }}"
+          description: "CPU使用率が80%を超えています（2分間平均）"

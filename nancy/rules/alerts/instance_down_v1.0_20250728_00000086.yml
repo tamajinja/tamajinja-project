@@ -1,0 +1,27 @@
+meta:
+  alertname: InstanceDown
+  version: v1.0
+  updated: 2025-07-28
+  thread: thread_Nancy_X_20250728_00000086.md
+  description: >
+    Prometheusターゲットの `up == 0` 状態を検知する基本的な死活監視アラート。
+    Exporterまたはノードがダウンしている可能性が高く、即時対応が必要。
+  tags:
+    - prometheus
+    - system-health
+    - availability
+    - alert
+    - Nancy_GitHub
+    - Nancy_Architect
+
+groups:
+  - name: system-health
+    rules:
+      - alert: InstanceDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "インスタンスがダウン: {{ $labels.instance }}"
+          description: "対象が応答していません"
